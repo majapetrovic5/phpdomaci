@@ -1,7 +1,7 @@
 <?php
 
-require './broker.php';
-$broker=Broker::getBroker();
+//require './broker.php';
+//$broker=Broker::getBroker();
 
 class Proizvodjac{
     public $id;   
@@ -16,7 +16,7 @@ class Proizvodjac{
 
     #funkcija prikazi sve getAll
 
-    public static function getAll()
+    public static function getAll(Broker $broker)
     {
         $query = "SELECT * FROM proizvodjac";
         return $broker->executeQuery($query);
@@ -24,7 +24,7 @@ class Proizvodjac{
 
     #funkcija getById
 
-    public static function getById($id){
+    public static function getById($id,Broker $broker){
         
         $query = "SELECT * FROM proizvodjac WHERE id=$id";
         return $broker->executeQuery($query);

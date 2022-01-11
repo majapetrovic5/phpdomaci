@@ -29,13 +29,13 @@ class Vakcinacija{  //dodaj jos neke atribute //vidi za vakcinu da ne bude prima
 
     #funkcija prikazi sve getAll //vidi za join
 
-    public static function getAll()
+    public static function getAll(Broker $broker)
     {
         $query = "SELECT * FROM vakcinacije";
         return $broker->query($query);
     }
 
-    public static function getAllByVaccine($VakcinaId)
+    public static function getAllByVaccine($VakcinaId, Broker $broker)
     {
         $query = "SELECT * FROM vakcinacije where vakcina=$VakcinaId";
         return $broker->query($query);
@@ -46,7 +46,7 @@ class Vakcinacija{  //dodaj jos neke atribute //vidi za vakcinu da ne bude prima
 
     #funkcija getById //vidi za join
 
-    public static function getById($id){
+    public static function getById($id, Broker $broker){
         $query = "SELECT * FROM vakcinacije WHERE id=$id";
         return $broker->query($query);
 
@@ -54,14 +54,14 @@ class Vakcinacija{  //dodaj jos neke atribute //vidi za vakcinu da ne bude prima
 
     #deleteById
 
-    public function deleteById()
+    public function deleteById(Broker $broker)
     {
         $query = "DELETE FROM vakcinacije WHERE id=$this->id";
         return $broker->query($query);
     }
 
     #update   //ili da zovemo nad objektom kojim menjamo, a saljemo id objekta koji se menja
-    public function update(Vakcinacija $vakcinacija)
+    public function update(Vakcinacija $vakcinacija,Broker $broker)
     {
         $query = "UPDATE vakcinacije set vakcina=$vakcinacija->vakcina,
         ime = $vakcinacija->ime,prezime = $vakcinacija->prezime, doza = $vakcinacija->doza,
@@ -70,7 +70,7 @@ class Vakcinacija{  //dodaj jos neke atribute //vidi za vakcinu da ne bude prima
     }
 
     #insert add
-    public static function add(Vakcinacija $vakcinacija)
+    public static function add(Vakcinacija $vakcinacija, Broker $broker)
     {
         $query = "INSERT INTO vakcinacija(vakcina, ime, prezime, doza, datum) VALUES('$vakcinacija->vakcina',
         '$ime->ime', '$prezime->prezime','$doza->doza','$datum->datum')";

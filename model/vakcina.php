@@ -1,8 +1,8 @@
 <?php
 
 
-require './broker.php';
-$broker=Broker::getBroker();
+//require './broker.php';
+//$broker=Broker::getBroker();
 
 class Vakcina{  //dodaj jos neke atribute
 
@@ -21,7 +21,7 @@ class Vakcina{  //dodaj jos neke atribute
 
     #funkcija prikazi sve getAll //vidi za join
 
-    public static function getAll()
+    public static function getAll(Broker $broker)
     {
         $query = "SELECT * FROM vakcine";
         return $broker->query($query);
@@ -37,14 +37,14 @@ class Vakcina{  //dodaj jos neke atribute
 
     #deleteById
 
-    public function deleteById()
+    public function deleteById(Broker $broker)
     {
         $query = "DELETE FROM vakcine WHERE id=$this->id";
         return $broker->query($query);
     }
 
     #update   //ili da zovemo nad objektom kojim menjamo, a saljemo id objekta koji se menja
-    public function update(Vakcina $vakcina)
+    public function update(Vakcina $vakcina, Broker $broker)
     {
         $query = "UPDATE vakcine set naziv = $vakcina->naziv,
         proizvodjac = $vakcina->proizvodjac WHERE id=$this->id";
@@ -52,7 +52,7 @@ class Vakcina{  //dodaj jos neke atribute
     }
 
     #insert add
-    public static function add(Vakcina $vakcina)
+    public static function add(Vakcina $vakcina, Broker $broker)
     {
         $query = "INSERT INTO vakcine(naziv, proizvodjac) VALUES('$vakcina->naziv','$proizvodjac->proizvodjac')";
         return $broker->query($query);
