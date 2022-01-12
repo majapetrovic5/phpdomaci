@@ -4,7 +4,7 @@ require "../model/vakcinacija.php";
 require '../broker.php';
 $broker=Broker::getBroker();
 
-if(isset($_POST['vakcina']) && isset($_POST['ime']) && isset($_POST['prezime'])
+if(isset($_POST['id']) && isset($_POST['vakcina']) && isset($_POST['ime']) && isset($_POST['prezime'])
 && isset($_POST['doza']) && isset($_POST['datum']) ) {
 
     $vakcinacijaKojomMenjam = new Vakcinacija(null, $_POST['vakcina'], $_POST['ime'],

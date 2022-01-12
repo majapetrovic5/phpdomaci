@@ -4,8 +4,8 @@ require "../model/vakcinacija.php";
 require '../broker.php';
 $broker=Broker::getBroker();
 
-if(isset($_POST['id'])){
-    $resultSet = Vakcinacija::getByVaccine($_POST['id'],$broker);
+if(isset($_GET['id'])){
+    $resultSet = Vakcinacija::getAllByVaccine($_GET['id'],$broker);
     $reponse=[];
     if(!$resultSet){
     $response['status']=0;
@@ -14,7 +14,7 @@ if(isset($_POST['id'])){
 else{
     $response['status']=1;
     while($row=$resultSet->fetch_object()){
-        $response['vakcinacija'][]=$row;
+        $response['vakcinacije'][]=$row;
     }
 }
 

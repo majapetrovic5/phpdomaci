@@ -37,7 +37,7 @@ class Vakcinacija{  //dodaj jos neke atribute //vidi za vakcinu da ne bude prima
 
     public static function getAllByVaccine($VakcinaId, Broker $broker)
     {
-        $query = "SELECT * FROM vakcinacije where vakcina=$VakcinaId";
+        $query = "SELECT * FROM vakcinacije WHERE vakcina=$VakcinaId";
         return $broker->query($query);
     }
 
@@ -64,16 +64,16 @@ class Vakcinacija{  //dodaj jos neke atribute //vidi za vakcinu da ne bude prima
     public function update(Vakcinacija $vakcinacija,Broker $broker)
     {
         $query = "UPDATE vakcinacije set vakcina=$vakcinacija->vakcina,
-        ime = $vakcinacija->ime,prezime = $vakcinacija->prezime, doza = $vakcinacija->doza,
-        datum = $vakcinacija->datum WHERE id=$this->id";
+        ime = '$vakcinacija->ime',prezime = '$vakcinacija->prezime', doza = $vakcinacija->doza,
+        datum = '$vakcinacija->datum' WHERE id=$this->id";
         return $broker->query($query);
     }
 
     #insert add
     public static function add(Vakcinacija $vakcinacija, Broker $broker)
     {
-        $query = "INSERT INTO vakcinacija(vakcina, ime, prezime, doza, datum) VALUES('$vakcinacija->vakcina',
-        '$ime->ime', '$prezime->prezime','$doza->doza','$datum->datum')";
+        $query = "INSERT INTO vakcinacije(vakcina, ime, prezime, doza, datum) VALUES('$vakcinacija->vakcina',
+        '$vakcinacija->ime', '$vakcinacija->prezime','$vakcinacija->doza','$vakcinacija->datum')";
         return $broker->query($query);
     }
 } 

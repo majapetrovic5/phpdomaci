@@ -1,6 +1,6 @@
 <?php
 
-require "../model/vakcinacije.php";
+require "../model/vakcinacija.php";
 require '../broker.php';
 $broker=Broker::getBroker();
 
