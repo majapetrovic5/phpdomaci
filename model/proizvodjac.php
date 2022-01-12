@@ -19,7 +19,7 @@ class Proizvodjac{
     public static function getAll(Broker $broker)
     {
         $query = "SELECT * FROM proizvodjac";
-        return $broker->executeQuery($query);
+        return $broker->query($query);
     }
 
     #funkcija getById
@@ -27,7 +27,7 @@ class Proizvodjac{
     public static function getById($id,Broker $broker){
         
         $query = "SELECT * FROM proizvodjac WHERE id=$id";
-        return $broker->executeQuery($query);
+        return $broker->query($query);
 
     } }
 
