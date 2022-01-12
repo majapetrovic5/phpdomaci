@@ -31,7 +31,7 @@ class Vakcina{  //dodaj jos neke atribute
 
     #funkcija getById //vidi za join
 
-    public static function getById($id){
+    public static function getById($id, Broker $broker){
         $query = "SELECT * FROM vakcina WHERE id=$id";
         return $broker->query($query);
 
