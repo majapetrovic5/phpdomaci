@@ -1,8 +1,8 @@
 <?php
 
 
-require './broker.php';
-$broker=Broker::getBroker();
+//require '../broker.php';
+//$broker=Broker::getBroker();
 
 class Vakcinacija{  //dodaj jos neke atribute //vidi za vakcinu da ne bude primarni kljuc,
     //dovoljan je vec sam id
@@ -31,7 +31,7 @@ class Vakcinacija{  //dodaj jos neke atribute //vidi za vakcinu da ne bude prima
 
     public static function getAll(Broker $broker)
     {
-        $query = "SELECT * FROM vakcinacije";
+        $query = "SELECT vak.*,v.naziv as vakcina_naziv FROM vakcinacije vak INNER JOIN vakcina v ON (vak.vakcina=v.id)";
         return $broker->query($query);
     }
 
