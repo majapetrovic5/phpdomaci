@@ -1,27 +1,24 @@
 <?php
 
 class Broker{
-    //private $result;
     private $mysqli;
     private static $broker;
 
-    /* public function getRezultat(){
-        return $this->rezultat;
-    } */
-    
+
     public function getMysqli(){
         return $this->mysqli;
     }
 
     private function __construct(){
-        $this->mysqli = new mysqli("localhost", "root", "Petrovic.maja99", "covidbaza");
-
-        if ($this->$mysqli->connect_errno){
-            exit("Neuspesna konekcija: Greska> ".$this->$mysqli->connect_error.", Err kod>"
-            .$this->$mysqli->connect_errno);
-        }
-
+        
+        $this->mysqli = new mysqli("localhost", "root", "", "covidbaza");
         $this->mysqli->set_charset("utf8");
+      
+        if ($this->mysqli->connect_errno){
+            exit("Neuspesna konekcija: Greska> ".$this->mysqli->connect_error.", Err kod>"
+            .$this->mysqli->connect_errno);
+        } 
+
     }
 
     public static function getBroker(){
@@ -31,7 +28,7 @@ class Broker{
         return $broker;
     }
     
-    public function executeQuery($upit){
+    public function query($upit){
         return $this->mysqli->query($upit);
     }
     

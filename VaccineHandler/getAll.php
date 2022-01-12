@@ -2,9 +2,10 @@
 
 require "../model/vakcina.php";
 require '../broker.php';
+
 $broker=Broker::getBroker();
 
-    $resultSet = Vakcine::getAll($broker);
+    $resultSet = Vakcina::getAll($broker);
     $reponse=[];
     
     if(!$resultSet){
