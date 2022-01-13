@@ -102,7 +102,7 @@
 
       <div class="button_div1">
         <button data-toggle="modal" data-target="#exampleModal" data-id='-1' type="button"
-          class="btn btn-secondary btn-lg btn-block">ZAKAZI VAKCINACIJU</button>
+          class="btn btn-secondary btn-lg btn-block" data-backdrop="static">ZAKAZI VAKCINACIJU</button>
       </div>
 
 
@@ -133,6 +133,10 @@
         const prezime = $('#prezime').val();
         const doza = $('#doza').val();
         const datum = $('#datum').val();
+
+        if(ime=="" || prezime=="" || doza=="" || datum=="") {alert("Morate popuniti sva polja."); return false;}
+
+
         if (trenutniVakcinacijaId == -1) {
           $.post('../VaccHandler/add.php', { vakcina: vakcina.id, ime: ime, prezime: prezime, doza: doza, datum: datum }, function (data) {
             console.log(data);
@@ -208,6 +212,12 @@
           return;
         }
         vakcinacije = data.vakcinacije;
+
+        vakcinacije.sort(function (a, b) {
+          return a.datum.localeCompare(b.datum);
+
+        })
+        
         console.log(vakcinacije);
         napuniTabelu();
       })
@@ -218,7 +228,7 @@
       let i = 0;
       for (let vakcinacija of vakcinacije) {
         $('#vakcinacije').append(`
-            <tr data-toggle='modal' data-target='#exampleModal' data-id=${vakcinacija.id} >
+            <tr data-toggle='modal' data-target='#exampleModal' data-id=${vakcinacija.id} data-backdrop='static'>
               <td>${++i}</td>
               <td>${vakcinacija.ime}</td>
               <td>${vakcinacija.prezime}</td>
