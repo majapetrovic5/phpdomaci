@@ -41,6 +41,16 @@
             <option value="asc">Najskorije</option>
             <option value="desc">Najudaljenije</option>
           </select>
+          </div> 
+      <div class="col-3">
+          <label>Pretrazi po datumu</label>
+          <input id='pretrazidatum' class='form-control' onkeyup='pretraziPoDatumu()'>
+              
+        </div>
+        <div class="col-3">
+          <label>Pretrazi po dozi</label>
+          <input id='pretrazidoza' class='form-control' onkeyup='pretraziPoDozi()'>
+              
         </div>
       </div>
       <div class='table_div'>
@@ -72,6 +82,7 @@
   <script>
 
     let vakcinacije = [];
+    let pretraga =[];
 
     $(document).ready(function () {
 
@@ -90,8 +101,9 @@
           })
         }
 
-        napuniTabelu();
+        napuniTabelu(vakcinacije);
       })
+
 
       $.getJSON('../VaccHandler/getAll.php', function (data) {
         console.log(vakcinacije);
@@ -100,28 +112,51 @@
           return;
         }
         vakcinacije = data.vakcinacije;
+        pretraga=data.vakcinacije;
         
         vakcinacije.sort(function (a, b) {
           return a.datum.localeCompare(b.datum);
 
         })
 
-        napuniTabelu();
+        napuniTabelu(vakcinacije);
       }).fail(function(jqxhr, textStatus, error){
         alert(error);
       });
 
     })
 
+    function pretraziPoDatumu(){
+       
+      input = document.getElementById("pretrazidatum");
+      filter = input.value;
+      pretraga=vakcinacije;
+      if(filter!="") {
+      pretraga = vakcinacije.filter(function (elem) { return elem.datum == filter}); }
+      napuniTabelu(pretraga);
+       
+      }
 
-    function napuniTabelu() {
+
+      function pretraziPoDozi(){
+       
+       input = document.getElementById("pretrazidoza");
+       filter = input.value;
+       pretraga=vakcinacije;
+       if(filter!="") {
+       pretraga = vakcinacije.filter(function (elem) { return elem.doza == filter}); }
+       napuniTabelu(pretraga);
+        
+       }
+
+
+    function napuniTabelu(niz) {
       $('#vakcinacije').html('');
       let i = 0;
-      for (let vakcinacija of vakcinacije) {
+      for (let vakcinacija of niz) {
         $('#vakcinacije').append(`
             <tr>
               <td>${++i}</td>
-            
               <td>${vakcinacija.vakcina_naziv}</td>
               <td>${vakcinacija.ime}</td>
               <td>${vakcinacija.prezime}</td>
