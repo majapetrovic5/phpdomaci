@@ -24,7 +24,7 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="naslovModala">Zakazivanje nove vakcinacije</h5>
+          <h5 class="modal-title" id="naslovModala"></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -55,9 +55,9 @@
 
         </div>
         <div class="modal-footer align_center">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Zatvori</button>
-          <button type="button" class="btn btn-primary" data-dismiss="modal" id="button_sacuvaj">Sacuvaj</button>
-          <button type="button" class="btn btn-danger" data-dismiss="modal" hidden id="button_delete">Obrisi</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"><b>Zatvori</b></button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" id="button_sacuvaj"><b>Sacuvaj</b></button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal" hidden id="button_delete"><b>Obrisi</b></button>
         </div>
       </div>
     </div>
@@ -77,15 +77,15 @@
     <div class='middle_div grid-item'>
 
       <div class='h_div'>
-        <h1 class='h1_text' id='vakcina_naziv'>Vakcina:</h1>
-    
         <br>
-        <hr>
+        <h1 class='h1_text' id='vakcina_naziv'>Vakcina:</h1>
+        <br>
+       
       </div>
 
       <div class='table_div'>
         <table class="table table-hover">
-          <thead class="thead-dark">
+          <thead class="">
             <tr>
               <th scope="col">#</th>
               <th scope="col">Ime</th>
@@ -102,7 +102,7 @@
 
       <div class="button_div1">
         <button data-toggle="modal" data-target="#exampleModal" data-id='-1' type="button"
-          class="btn btn-secondary btn-lg btn-block" data-backdrop="static">ZAKAZI VAKCINACIJU</button>
+          class="btn btn-secondary btn-lg btn-block" data-backdrop="static"><b>ZAKAZI VAKCINACIJU</b></button>
       </div>
 
 

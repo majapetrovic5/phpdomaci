@@ -29,9 +29,10 @@
     <div class='middle_div grid-item'>
 
       <div class='h_div'>
-        <h1 class='h1_text'>Zakazane vakcinacije</h1>
-
         <br>
+        <h1 class='h1_text'>Zakazane vakcinacije</h1>
+          <br>
+       
         <hr>
       </div>
       <div class="row">
@@ -52,10 +53,14 @@
           <input id='pretrazidoza' class='form-control' onkeyup='pretraziPoDozi()'>
               
         </div>
+       
       </div>
+
+      <br>
+      
       <div class='table_div'>
         <table class="table">
-          <thead class="thead-dark">
+          <thead class="">
             <tr>
               <th scope="col">ID</th>
               <th scope="col">Vakcina</th>

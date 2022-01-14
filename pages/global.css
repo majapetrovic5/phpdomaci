@@ -10,18 +10,28 @@
 .centerDiv {
   width: 100vw !important;
   height: 100vh !important;
-  border: 1px solid black;
-  background-image: url("./img-home2.jpg");
+  border: 1px solid rgb(158, 156, 156);
+  background-image: url("./homefinal.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 15% 1fr 15%;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .navbar_div {
   width: 100% !important;
   height: auto !important;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.navbar-brand {
+  font-size: 35px !important;
+}
+
+#navbarText {
+  font-size: 25px !important;
 }
 
 .wallpaper_div {
@@ -42,10 +52,12 @@
 .middle_div {
   grid-column-start: 2;
   grid-column-end: 3;
-  background-color: whitesmoke;
+  background-color: rgb(202, 199, 199);
   opacity: 0.9;
   border-left: 5px solid grey;
   border-right: 5px solid grey;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 20px;
 }
 
 .centered {
@@ -58,7 +70,10 @@
 }
 
 .h1_text {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 70;
+  margin-top: 30px;
+  font-weight: bold;
 }
 
 .button_div1 {
@@ -70,8 +85,66 @@
   padding-right: 30% !important;
 }
 
+.btn-secondary {
+  background-color: #91acbf !important;
+  color: black !important;
+  font-size: 20px !important;
+}
+
+.row {
+  justify-content: center;
+  font-size: 23px;
+  text-align: center;
+}
+
+#naslovModala {
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #59c987 !important;
+  color: black !important;
+  font-size: 20px !important;
+}
+
+.btn-danger {
+  color: black !important;
+  font-size: 20px !important;
+  background-color: #b45b58 !important;
+}
+
+.btn-warning {
+  color: black !important;
+  font-size: 20px !important;
+  background-color: #f5c256 !important;
+}
+
+.modal-title {
+  font-size: 30px !important;
+}
+
+.form-control {
+  font-size: 20px !important;
+}
+
+.modal {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 20px;
+}
+
+.middle_div {
+  background-color: whitesmoke;
+  border: none;
+}
+
 .hoverable:hover {
   cursor: pointer;
+}
+
+thead {
+  background-color: #91acbf !important;
+  color: black !important;
+  text-align: center;
 }
 
 .h_div {

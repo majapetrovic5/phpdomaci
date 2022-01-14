@@ -24,7 +24,7 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Izmena vakcine</h5>
+          <h5 class="modal-title" id="exampleModalLabel"><b>Izmena vakcine</b></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -33,7 +33,7 @@
 
           <!-- sadrzaj modala -->
           <form>
-            <div class="form-group centered">
+            <div class="form-group">
               <label for="naziv_vakcine">Naziv vakcine:</label>
               <input type="text" class="form-control" id="naziv_vakcine" value='' required>
             </div>
@@ -49,15 +49,15 @@
               </div>
             </fieldset>
             <div class="d-grid gap-2">
-              <a href='./vakcinacijeZaVakcinu.php' id='zakazaneVakcinacije'><button class="btn btn-warning" type="button">Zakazane vakcinacije</button></a>
+              <a href='./vakcinacijeZaVakcinu.php' id='zakazaneVakcinacije'><button class="btn btn-warning" type="button"><b>Zakazane vakcinacije</b></button></a>
             </div>
           </form>
 
         </div>
         <div class="modal-footer align_center">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Zatvori</button>
-          <button type="button" class="btn btn-primary" data-dismiss="modal" id="button_sacuvaj">Sacuvaj</button>
-          <button type='button' class="btn btn-danger" data-dismiss="modal" id="button_delete">Obrisi</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"><b>Zatvori</b></button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" id="button_sacuvaj"><b>Sacuvaj</b></button>
+          <button type='button' class="btn btn-danger" data-dismiss="modal" id="button_delete"><b>Obrisi</b></button>
         </div>
       </div>
     </div>
@@ -68,7 +68,7 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Unos nove vakcine</h5>
+          <h5 class="modal-title" id="exampleModalLabel"><b>Unos nove vakcine</b></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -97,8 +97,8 @@
 
         </div>
         <div class="modal-footer align_center">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Zatvori</button>
-          <button type="button" class="btn btn-primary" data-dismiss="modal" id="button_dodaj">Dodaj</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"><b>Zatvori</b></button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" id="button_dodaj"><b>Dodaj</b></button>
         </div>
       </div>
     </div>
@@ -115,14 +115,15 @@
 
 
       <div class='h_div'>
+      <br>
         <h1 class='h1_text'>Dostupne vakcine</h1>
-        <br>
-        <hr>
+       
+       <br>
       </div>
 
       <div class='table_div table-hover'>
         <table class="table">
-          <thead class="thead-dark">
+          <thead  >
             <tr>
               <th scope="col">ID</th>
               <th scope="col">Vakcina</th>
@@ -139,7 +140,7 @@
 
       <div class="button_div1">
         <button data-toggle="modal" data-target="#exampleModal" type="button" data-backdrop="static"
-          class="btn btn-secondary btn-lg btn-block">NOVA VAKCINA</button>
+          class="btn btn-secondary btn-lg btn-block"><b>NOVA VAKCINA</b></button>
       </div>
  </div>
 
