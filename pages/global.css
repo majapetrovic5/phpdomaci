@@ -89,6 +89,7 @@
   background-color: #91acbf !important;
   color: black !important;
   font-size: 20px !important;
+  border-color: #91acbf !important;
 }
 
 .row {
@@ -105,18 +106,21 @@
   background-color: #59c987 !important;
   color: black !important;
   font-size: 20px !important;
+  border-color: #59c987 !important;
 }
 
 .btn-danger {
   color: black !important;
   font-size: 20px !important;
   background-color: #b45b58 !important;
+  border-color: #b45b58 !important;
 }
 
 .btn-warning {
   color: black !important;
   font-size: 20px !important;
   background-color: #f5c256 !important;
+  border-color: #f5c256 !important;
 }
 
 .modal-title {
