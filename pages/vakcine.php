@@ -174,7 +174,10 @@
         //console.log("radi sacuvaj");
         const naziv = $('#naziv_vakcine').val();
         const proizvodjac = $('#proizvodjac_vakcine').val();
-        if(naziv==""){alert('Morate uneti naziv vakcine. Probajte ponovo.'); return false;}
+        let pattern=new RegExp('(.*[a-z]){2}');
+        if(naziv=="" || !pattern.test(naziv))
+        {alert('Morate uneti ispravan naziv vakcine. Probajte ponovo.'); return false;}
+       
         $.post('../VaccineHandler/update.php', { id: trenutniId, naziv: naziv, proizvodjac:proizvodjac }, function (data) {
           console.log(data);
           if (data != 1) {
@@ -192,7 +195,8 @@
         }
         $.post('../VaccineHandler/deleteById.php', { id: trenutniId }, function (data) {
           if (data != 1) {
-            alert(data);
+            console.log(data);
+            alert("Ne mozete obrisati vakcinu koja ima zakazane vakcinacije!");
             return;
           }
           console.log({ trenutniId: trenutniId });
@@ -210,9 +214,11 @@
       $('#button_dodaj').click(function (e) {
         const naziv = $('#naziv_vakcine_dodaj').val();
         const proizvodjac = $('#proizvodjac_vakcine_dodaj').val();
-
-        if(naziv=="") { alert('Morate uneti naziv vakcine. Pokusajte ponovo.'); return false; }
         
+        let pattern=new RegExp('(.*[a-z]){2}');
+        if(naziv=="" || !pattern.test(naziv))
+        { alert('Morate uneti ispravan naziv vakcine. Pokusajte ponovo.'); return false; }
+        if(vakcine.find(x=>x.naziv.toUpperCase()==naziv.toUpperCase())) {alert('Vec postoji vakcina sa datim nazivom!'); return false;}
         $.post('../VaccineHandler/add.php', { naziv: naziv, proizvodjac: proizvodjac }, function (data) {
          console.log(data);
           if (data != 1) {
