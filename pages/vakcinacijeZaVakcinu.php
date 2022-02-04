@@ -135,6 +135,15 @@
         const datum = $('#datum').val();
 
         if(ime=="" || prezime=="" || doza=="" || datum=="") {alert("Morate popuniti sva polja."); return false;}
+        let patternIme=new RegExp('^[a-zA-Z]{3,15}$');
+        let patternPrezime=new RegExp('^[a-zA-Z]{4,15}$');
+        let patternDoza=new RegExp('[1-3]');
+    
+     
+          if(!patternIme.test(ime)) { alert('Morate uneti ispravno ime. Pokusajte ponovo.'); return false; }
+          if(!patternPrezime.test(prezime)) { alert('Morate uneti ispravno prezime. Pokusajte ponovo.'); return false; }
+          if(!patternDoza.test(doza)) { alert('Morate uneti ispravnu dozu. Pokusajte ponovo.'); return false; }
+          if(!/^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/.test(datum)) { alert('Morate uneti ispravan datum. Pokusajte ponovo.'); return false; }
 
 
         if (trenutniVakcinacijaId == -1) {
